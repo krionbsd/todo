@@ -3,7 +3,7 @@ use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
 pub enum Items {
-    /// Add entry.
+    /// Add an entry.
     Add {
         #[structopt()]
         task: String,
