@@ -6,7 +6,7 @@ pub struct AppState {
 }
 
 impl AppState {
-    pub fn new(todos: Vector<TodoItem>) -> Self {
+    pub fn new(todos: Vec<TodoItem>) -> Self {
         Self {
             todos: Vector::from(todos),
         }
