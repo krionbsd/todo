@@ -60,7 +60,6 @@ impl Controller<TodoItem, Either<TodoItem>> for TodoItemController {
         data: &TodoItem,
         env: &Env,
     ) {
-        // Limit our rebuilds and saves to when we lose selection or toggle the checkbox
         if old_data.done != data.done {
             ctx.submit_command(REBUILD.with(data.id));
             ctx.submit_command(SAVE.with(data.id));
