@@ -26,7 +26,6 @@ pub struct TodoItem {
     pub editing: bool,
     pub selected: bool,
     text: String,
-    // We use this to remember what the text was before an edit, in case it's cancelled
     stash: String,
     rendered: RichText,
 }
