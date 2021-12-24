@@ -17,17 +17,11 @@ impl<T: Data> DoubleClick<T> {
 
 impl<T: Data, W: Widget<T>> Controller<T, W> for DoubleClick<T> {
     fn event(&mut self, child: &mut W, ctx: &mut EventCtx, event: &Event, data: &mut T, env: &Env) {
-        match event {
-            Event::MouseDown(m) => {
-                if m.button == MouseButton::Left {
-                    if m.count == 2 {
+        if let Event::MouseDown(m) = event  {
+                if m.button == MouseButton::Left && m.count == 2 {
                         (self.action)(ctx, data, env);
                     }
                 }
-            }
-            _ => {}
-        }
-
         child.event(ctx, event, data, env);
     }
 
