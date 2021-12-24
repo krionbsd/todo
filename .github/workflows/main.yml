@@ -18,7 +18,7 @@ jobs:
     name: Run cargo fmt and cargo clippy
     runs-on: ubuntu-latest
     steps:
-      - name: pango
+      - name: Install dependencies
         run: |
           sudo apt-get install -y libpango1.0-dev libpangocairo-1.0-0 \
           pango1.0-tools libatk1.0-dev libatk1.0-0 libgtk2.0-0 \

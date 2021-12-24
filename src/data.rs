@@ -37,6 +37,7 @@ pub struct SerdeTodoItem {
     text: String,
 }
 
+#[allow(clippy::from_over_into)]
 impl Into<TodoItem> for SerdeTodoItem {
     fn into(self) -> TodoItem {
         TodoItem {
