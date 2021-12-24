@@ -16,7 +16,7 @@ mod controllers;
 pub fn main() {
     let main_window = WindowDesc::new(build_ui)
         .title("Todo")
-        .window_size((400.0, 400.0));
+        .window_size((400.0, 600.0));
 
     let initial_state = AppState::load_from_json();
 
