@@ -138,7 +138,8 @@ impl AppState {
             Ok(file) => {
                 let reader = BufReader::new(file);
                 let serde_todos: Vec<SerdeTodoItem> =
-                    serde_json::from_reader(reader).unwrap_or(vec![]);
+              //      serde_json::from_reader(reader).unwrap_or(vec![]);
+                    serde_json::from_reader(reader).unwrap_or_default();
                 let todos: Vec<TodoItem> =
                     serde_todos.iter().map(|item| item.clone().into()).collect();
                 Self {
